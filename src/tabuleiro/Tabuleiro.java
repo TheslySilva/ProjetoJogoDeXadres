@@ -1,17 +1,19 @@
 package tabuleiro;
 
+import tabuleiro.Peca;
+
 public class Tabuleiro {
 	
 	private int linhas;
 	private int colunas;
-	private Peca[][] peca;
+	private Peca[][] pecas;
 	
 	//Construtor
 	public Tabuleiro(int linhas,int colunas){
 		
 		this.linhas = linhas;
 		this.colunas = colunas;
-		peca= new Peca[linhas][colunas];
+		pecas= new Peca[linhas][colunas];
 		
 	}
 	
@@ -32,9 +34,15 @@ public class Tabuleiro {
 	
 	//Sobrecarga
 	public Peca peca(int linha,int coluna){
-		return peca[linha][coluna];
+		return pecas[linha][coluna];
 	}
 	public Peca peca(Posicao posicao){
-		return peca[posicao.getLinha()][posicao.getColuna()];
+		return pecas[posicao.getLinha()][posicao.getColuna()];
+	}
+		
+	//Colocar peca
+	public void colocarPeca(Peca peca, Posicao posicao){
+		pecas[posicao.getLinha()][posicao.getColuna()]= peca;
+		peca.posicao = posicao;
 	}
 }
