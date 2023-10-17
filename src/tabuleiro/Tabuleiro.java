@@ -1,48 +1,49 @@
 package tabuleiro;
 
 import tabuleiro.Peca;
+import tabuleiro.Posicao;
 
 public class Tabuleiro {
-	
 	private int linhas;
 	private int colunas;
 	private Peca[][] pecas;
 	
 	//Construtor
-	public Tabuleiro(int linhas,int colunas){
-		
+	public Tabuleiro(int linhas, int colunas) {
 		this.linhas = linhas;
 		this.colunas = colunas;
-		pecas= new Peca[linhas][colunas];
-		
+		pecas = new Peca[linhas][colunas];
 	}
 	
 	//Get e Set
-	public void setLinha(int linhas ){
+	public void setLinha(int linhas) {
 		this.linhas = linhas;
 	}
-	public int getLinha(){
+	
+	public int getLinha() {
 		return this.linhas;
 	}
 	
-	public void setColuna(int colunas ){
-		this.colunas= colunas;
+	public void setColuna(int colunas) {
+		this.colunas = colunas;
 	}
-	public int getColuna(){
+	
+	public int getColuna() {
 		return this.colunas;
 	}
 	
 	//Sobrecarga
-	public Peca peca(int linha,int coluna){
+	public Peca peca(int linha, int coluna) {
 		return pecas[linha][coluna];
 	}
-	public Peca peca(Posicao posicao){
+	
+	public Peca peca(Posicao posicao) {
 		return pecas[posicao.getLinha()][posicao.getColuna()];
 	}
-		
+	
 	//Colocar peca
-	public void colocarPeca(Peca peca, Posicao posicao){
-		pecas[posicao.getLinha()][posicao.getColuna()]= peca;
+	public void colocarPeca(Peca peca, Posicao posicao) {
+		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
 		peca.posicao = posicao;
 	}
 }
