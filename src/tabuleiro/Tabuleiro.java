@@ -1,36 +1,33 @@
 package tabuleiro;
 
-public class Tabuleiro {
+public class Tabuleiro(){
 	
-	private int linha;
-	private int coluna;
+	private int linhas;
+	private int colunas;
+	private Peca[][] peca;
 	
 	//Construtor
-	public Tabuleiro(int linha, int coluna) {
-		this.linha = linha;
-		this.coluna = coluna;
+	public Tabuleiro(int linhas,int colunas){
+		
+		this.linhas = linhas;
+		this.colunas = colunas;
+		peca= new Peca[linhas][colunas];
+		
 	}
 	
 	//Get e Set
-	public void setLinha(int linha) {
-		this.linha = linha;
+	public void setLinhas(int linhas ){
+		this.linhas = linhas;
+	}
+	public int getLinhas(){
+		return this.linhas;
 	}
 	
-	public int getLinha() {
-		return this.linha;
+	public void setColunas(int colunas ){
+		this.colunas= colunas;
+	}
+	public int getColunas(){
+		return this.colunas;
 	}
 	
-	public void setColuna(int coluna) {
-		this.coluna = coluna;
-	}
-	
-	public int getColuna() {
-		return this.coluna;
-	}
-	
-	//Sobreposicao
-	@Override()
-	public String toString() {
-		return "(" + linha + ", " + coluna + ")";
-	}
 }
