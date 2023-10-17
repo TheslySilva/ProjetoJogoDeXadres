@@ -1,12 +1,14 @@
+package programa;
 
-import java.util.Scanner;
+import xadrez.PartidaDeXadrez;
+import programa.UI;
 
-public class Main{
+public class Main {
+	
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Ta upando");
-		
+		//Imprimindo o Tabuleiro
+		PartidaDeXadrez partidadexadrez= new PartidaDeXadrez();
+		UI.imprimirTabuleiro(partidadexadrez.getPecas());
 	}
 }

@@ -1,6 +1,6 @@
 package tabuleiro;
 
-public class Tabuleiro(){
+public class Tabuleiro {
 	
 	private int linhas;
 	private int colunas;
@@ -16,18 +16,25 @@ public class Tabuleiro(){
 	}
 	
 	//Get e Set
-	public void setLinhas(int linhas ){
+	public void setLinha(int linhas ){
 		this.linhas = linhas;
 	}
-	public int getLinhas(){
+	public int getLinha(){
 		return this.linhas;
 	}
 	
-	public void setColunas(int colunas ){
+	public void setColuna(int colunas ){
 		this.colunas= colunas;
 	}
-	public int getColunas(){
+	public int getColuna(){
 		return this.colunas;
 	}
 	
+	//Sobrecarga
+	public Peca peca(int linha,int coluna){
+		return peca[linha][coluna];
+	}
+	public Peca peca(Posicao posicao){
+		return peca[posicao.getLinha()][posicao.getColuna()];
+	}
 }
